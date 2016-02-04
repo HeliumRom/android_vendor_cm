@@ -105,6 +105,14 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/etc/init.local.rc:root/init.cm.rc
 
+# Google PinYin
+PRODUCT_COPY_FILES += $(shell test -d vendor/sm/prebuilt/google/app/GooglePinYin && \
+    find vendor/sm/prebuilt/google/app/GooglePinYin -name '*.apk' \
+    -printf '%p:system/app/GooglePinYin/%f ')
+PRODUCT_COPY_FILES += $(shell test -d vendor/sm/prebuilt/google/app/GooglePinYin && \
+    find vendor/sm/prebuilt/google/app/GooglePinYin -name '*.so' \
+    -printf '%p:system/app/GooglePinYin/lib/arm/%f ')
+
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
@@ -120,6 +128,10 @@ PRODUCT_COPY_FILES += \
 # This is CM!
 PRODUCT_COPY_FILES += \
     vendor/cm/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
+
+# Phonelocation!
+PRODUCT_COPY_FILES +=  \
+    vendor/sm/prebuilt/common/media/location/suda-phonelocation.dat:system/media/location/suda-phonelocation.dat
 
 # Live lockscreen
 PRODUCT_COPY_FILES += \
@@ -139,6 +151,10 @@ PRODUCT_PACKAGES += \
     libemoji \
     Terminal
 
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.radio.ipcall.enabled=true
+
 # Include librsjni explicitly to workaround GMS issue
 PRODUCT_PACKAGES += \
     librsjni
@@ -154,6 +170,7 @@ PRODUCT_PACKAGES += \
     LockClock \
     CMUpdater \
     CyanogenSetupWizard \
+    PhoneLocationProvider \
     CMSettingsProvider \
     ExactCalculator
 
@@ -224,10 +241,15 @@ PRODUCT_PACKAGES += \
     procmem \
     procrank \
     su
-endif
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.root_access=1
+else
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=0
+
+endif
 
 PRODUCT_PACKAGE_OVERLAYS += vendor/cm/overlay/common
 
