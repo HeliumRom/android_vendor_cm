@@ -131,7 +131,7 @@ PRODUCT_COPY_FILES += \
 
 # Phonelocation!
 PRODUCT_COPY_FILES +=  \
-    vendor/sm/prebuilt/common/media/location/suda-phonelocation.dat:system/media/location/suda-phonelocation.dat
+    vendor/cm/prebuilt/common/media/location/suda-phonelocation.dat:system/media/location/suda-phonelocation.dat
 
 # Live lockscreen
 PRODUCT_COPY_FILES += \
