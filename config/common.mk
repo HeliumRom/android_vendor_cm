@@ -161,15 +161,13 @@ PRODUCT_PACKAGES += \
 
 # Custom CM packages
 PRODUCT_PACKAGES += \
-    Launcher3 \
     Trebuchet \
     AudioFX \
     CMWallpapers \
     CMFileManager \
     Eleven \
     LockClock \
-    CMUpdater \
-    CyanogenSetupWizard \
+    SudaLauncher \
     PhoneLocationProvider \
     CMSettingsProvider \
     ExactCalculator
@@ -237,6 +235,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # These packages are excluded from user builds
 ifneq ($(TARGET_BUILD_VARIANT),user)
+
 PRODUCT_PACKAGES += \
     procmem \
     procrank \
