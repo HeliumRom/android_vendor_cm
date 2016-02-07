@@ -107,10 +107,10 @@ PRODUCT_COPY_FILES += \
 
 # Google PinYin
 PRODUCT_COPY_FILES += $(shell test -d vendor/sm/prebuilt/google/app/GooglePinYin && \
-    find vendor/sm/prebuilt/google/app/GooglePinYin -name '*.apk' \
+    find vendor/cm/prebuilt/google/app/GooglePinYin -name '*.apk' \
     -printf '%p:system/app/GooglePinYin/%f ')
 PRODUCT_COPY_FILES += $(shell test -d vendor/sm/prebuilt/google/app/GooglePinYin && \
-    find vendor/sm/prebuilt/google/app/GooglePinYin -name '*.so' \
+    find vendor/cm/prebuilt/google/app/GooglePinYin -name '*.so' \
     -printf '%p:system/app/GooglePinYin/lib/arm/%f ')
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
@@ -167,7 +167,6 @@ PRODUCT_PACKAGES += \
     CMFileManager \
     Eleven \
     LockClock \
-    SudaLauncher \
     PhoneLocationProvider \
     CMSettingsProvider \
     ExactCalculator
@@ -235,20 +234,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # These packages are excluded from user builds
 ifneq ($(TARGET_BUILD_VARIANT),user)
-
 PRODUCT_PACKAGES += \
     procmem \
     procrank \
     su
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.root_access=1
-else
+endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=0
-
-endif
 
 PRODUCT_PACKAGE_OVERLAYS += vendor/cm/overlay/common
 
@@ -377,6 +370,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # CyanogenMod Platform Internal
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.cm.build.version.plat.rev=$(CM_PLATFORM_REV)
+
+# HeliumRom
+$(call inherit-product, vendor/cm/config/he_common.mk)
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 
