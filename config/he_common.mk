@@ -1,3 +1,7 @@
+# Busybox
+PRODUCT_PACKAGES += \
+    Busybox
+
 # SuperSu
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/etc/supersu.zip:supersu/supersu.zip
