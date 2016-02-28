@@ -2,10 +2,6 @@
 PRODUCT_PACKAGES += \
     Busybox
 
-# SuperSu
-PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/etc/supersu.zip:supersu/supersu.zip
-
 # Google PinYin
 PRODUCT_COPY_FILES += $(shell test -d vendor/sm/prebuilt/google/app/GooglePinYin && \
     find vendor/sm/prebuilt/google/app/GooglePinYin -name '*.apk' \
