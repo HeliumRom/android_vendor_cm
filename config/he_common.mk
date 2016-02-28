@@ -1,7 +1,3 @@
-# Busybox
-PRODUCT_PACKAGES += \
-    Busybox
-
 # Google PinYin
 PRODUCT_COPY_FILES += $(shell test -d vendor/sm/prebuilt/google/app/GooglePinYin && \
     find vendor/sm/prebuilt/google/app/GooglePinYin -name '*.apk' \
