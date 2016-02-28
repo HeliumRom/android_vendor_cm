@@ -16,6 +16,3 @@ ifeq ($(DISABLE_ADB_AUTH),true)
         ro.adb.secure=3 \
         persist.sys.root_access=3
 endif
-
-# Enable ADB authentication
-ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
