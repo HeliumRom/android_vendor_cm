@@ -2,6 +2,15 @@
 PRODUCT_PACKAGES += \
      Busybox
 
+# Kernel Adiuter
+PRODUCT_PACKAGES += \
+    KernelAdiutor \
+    FloatingActionButton
+
+# KernelAdiutor
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/apk/KernelAdiutor/KernelAdiutor.apk:system/app/KernelAdiutor/KernelAdiutor.apk
+
 # Google PinYin
 PRODUCT_COPY_FILES += $(shell test -d vendor/sm/prebuilt/google/app/GooglePinYin && \
     find vendor/sm/prebuilt/google/app/GooglePinYin -name '*.apk' \
