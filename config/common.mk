@@ -129,7 +129,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/cm/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
 
-<<<<<<< HEAD
 # Phonelocation!
 PRODUCT_COPY_FILES +=  \
     vendor/cm/prebuilt/common/media/location/suda-phonelocation.dat:system/media/location/suda-phonelocation.dat
@@ -138,8 +137,6 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_COPY_FILES += \
     vendor/cm/config/permissions/org.cyanogenmod.livelockscreen.xml:system/etc/permissions/org.cyanogenmod.livelockscreen.xml
 
-=======
->>>>>>> cm/cm-13.0
 # Theme engine
 include vendor/cm/config/themes_common.mk
 
