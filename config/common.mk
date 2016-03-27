@@ -170,7 +170,6 @@ PRODUCT_PACKAGES += \
     Eleven \
     LockClock \
     PhoneLocationProvider \
-    CyanogenSetupWizard \
     CMSettingsProvider \
     ExactCalculator
 
